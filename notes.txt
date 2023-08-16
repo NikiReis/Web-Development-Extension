@@ -1,0 +1,29 @@
+Aula 2:
+    Declarando variáveis:
+        const n = 1;
+        var n = 2;
+        let n = 3;
+
+        const:
+            Escopo de bloco {};
+            Não pode ser declarado
+            novamente e nem atualizado;
+
+        var:
+            Escopo global ou escopo de
+            função/local;
+            Podem ser declaradas de novo e
+            atualizadas;
+
+        let:
+            Escopo de bloco {};
+            Pode ser atualizado, mas não
+            declarado novamente;
+
+        Tipos primitivos:
+            No JavaScript, existem 5 tipos básicos:
+            - String
+            - Number
+            - Boolean
+            - Null
+            - undefined

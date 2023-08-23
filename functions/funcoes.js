@@ -36,7 +36,7 @@ function contar(n){
     // contar(n-1);
     // console.log(n);
     console.log(n)
-    contar(n-1);"
+    contar(n-1);
   }
 }
 contar(7);

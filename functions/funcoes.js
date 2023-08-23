@@ -4,7 +4,7 @@ function somar(a){
 }
 console.log(somar("5", teste,abc));
 
-# Definindo parâmetros default
+// Definindo parâmetros default
 function somar2(a,b=5){
   return a+b
 }

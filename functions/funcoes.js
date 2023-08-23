@@ -1,4 +1,4 @@
-# Retorna erro de undefined
+// Retorna erro de undefined
 function somar(a){
   return a;
 }
@@ -10,7 +10,7 @@ function somar2(a,b=5){
 }
 console.log(somar2(4));
 
-# Definindo funções com inúmeros parâmetros
+// Definindo funções com inúmeros parâmetros
 
 // Usando a propriedade 'arguments'
 function somar() {
@@ -30,7 +30,7 @@ function multiplicar(...numeros) {
 
 console.log(multiplicar(2, 3, 4)); // Saída: 24
 
-# Definindo função recursiva
+// Definindo função recursiva
 function contar(n){
   if(n>0){
     "contar(n-1);"
@@ -41,7 +41,7 @@ function contar(n){
 }
 contar(7);
 
-# Definindo funções dentro de objetos com objetos
+// Definindo funções dentro de objetos com objetos
 const calculadora = {
   somar(a,b){
     return a + b;
@@ -56,7 +56,7 @@ function enviarEmail(){
   console.log("Email: DOWNLOAD FINALIZADO");
 }
 
-# Criando funções com callback
+// Criando funções com callback
 function baixarArquivo(NomeDoArquivo, callback){
   console.log("baixando arquivo " + NomeDoArquivo);
   setTimeout(() => {

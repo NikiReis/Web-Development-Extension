@@ -33,8 +33,8 @@ console.log(multiplicar(2, 3, 4)); // Saída: 24
 // Definindo função recursiva
 function contar(n){
   if(n>0){
-    "contar(n-1);"
-    "console.log(n);"
+    // contar(n-1);
+    // console.log(n);
     console.log(n)
     contar(n-1);"
   }

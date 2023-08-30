@@ -1,4 +1,5 @@
 const calc = require('./utils/calculadora');
+<<<<<<< HEAD
 const express = require('express');
 
 const app = express();
@@ -18,3 +19,6 @@ app.listen(PORT, function(){
     console.log("app rodando na porta "+PORT);
 });
 
+=======
+console.log(calc.somar(4,7));
+>>>>>>> 6e39a355d4f2db54f5fc5ffa544445fa761a5ec4

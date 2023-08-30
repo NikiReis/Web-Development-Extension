@@ -6,8 +6,13 @@
     "scripts": {
         "test": "echo\"Erro: no test specified\"&&exit1"
     },
+<<<<<<< HEAD
     "author": "",
     "license": "ISC",
+=======
+    "author": "Linek",
+    "license": "MIT",
+>>>>>>> 6e39a355d4f2db54f5fc5ffa544445fa761a5ec4
     "dependencies": {
         "express": "^4.18.2"
     }

@@ -1,16 +1,6 @@
 module.exports = {
-    somar: function(a, b){
-        return Number.parseInt(a) + Number.parseInt(b);
-    },
-    subtrair: function (a, b){
-        return Number.parseInt(a) - Number.parseInt(b);
-    },
-
-    multiplicar: function (a, b){
-        return Number.parseInt(a) * Number.parseInt(b);
-    },
-
-    dividir: function (a, b){
-        return Number.parseInt(a) / Number.parseInt(b);
-    }
-}
+    somar: (a, b) => a + b,
+    subtrair: (a, b) => a - b,
+    multiplicar: (a, b) => a * b,
+    dividir: (a, b) => a / b,
+};

@@ -1,20 +1,24 @@
 const express = require("express");
-const mustacheExpress = require("mustache-express");
+const bodyParser = require("body-parser");
 const app = express();
+const port = 3000;
 
-app.engine("html", mustacheExpress());
-app.set("view engine","html");
-app.set("views",__dirname + "/views");
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static("public"));
 
-app.get("/",function(req,res){
-    res.render("index.html");
+// Rota principal que renderiza o formulário
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "/views/index.html");
+});
+app.get("/dados", (req, res) => {
+  res.sendFile(__dirname + "/views/dados.html");
+});
+// Rota para receber os dados do formulário via POST e redirecionar para a página de dados
+app.post("/dados", (req, res) => {
+    const { nome, endereco, telefone, data } = req.body;
+    res.redirect(`/dados?nome=${nome}&endereco=${endereco}&telefone=${telefone}&data=${data}`);
 });
 
-const PORT = 8080;
-app.listen(PORT, function(){
-    console.log("app redoando na porta"+PORT);
-});
-
-app.get("/", function(req,res){
-    res.render("index.html");
+app.listen(port, () => {
+    console.log(`Servidor rodando em http://localhost:${port}`);
 });

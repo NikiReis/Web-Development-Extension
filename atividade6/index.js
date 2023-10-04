@@ -1,25 +1,45 @@
-const express = require("express");
-const mustacheExpress = require("mustache-express");
+const express = require('express');
+const mustacheExpress = require('mustache-express');
 const app = express();
 
-app.engine("html", mustacheExpress());
-app.set("view engine","html");
-app.set("views",__dirname + '/views');
+app.engine('html', mustacheExpress());
+app.set('view engine', 'html');
+app.set('views', __dirname + '/views');
 
-app.get('/',function (req,res){
+app.use(express.urlencoded({extended: true}));
+
+app.get("/", function (req, res) {
     res.render("index.html");
-})
-
-app.get("/", function(req,res){
-    let usuario = {
-        nome: "Linek",
-        telefone: 123123
-    }
-
-    res.render("index.html", {usuario});
 });
 
-const PORT  = 8080;
-app.listen(PORT, function(){
-    console.log("app rodando na webs pela porta " + PORT);
-})
+app.post("/dados", function (req, res) {
+    let agendamento = {
+        nome: req.body.nome,
+        endereco: req.body.endereco,
+        telefone: req.body.telefone,
+        data_agendamento: req.body.data_agendamento
+    };
+
+    let erro_form = false;
+
+    if(agendamento.nome == ""){
+        erro_form = true;
+    }
+    if(agendamento.endereco == ""){
+        erro_form = true;
+    }
+    if(agendamento.telefone == ""){
+        erro_form = true;
+    }
+    if(agendamento.data_agendamento == ""){
+        erro_form = true;
+    }
+
+    res.render("dados.html", {agendamento, erro_form});
+
+});
+
+const PORT = 8080;
+app.listen(PORT, function () {
+    console.log("app rodando na porta " + PORT);
+});
